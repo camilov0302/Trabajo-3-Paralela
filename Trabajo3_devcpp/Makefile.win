@@ -1,0 +1,37 @@
+# Project: Trabajo 3
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = sequential_merge.o binary_search.o main.o binary_search_classic.o
+LINKOBJ  = sequential_merge.o binary_search.o main.o binary_search_classic.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Trabajo 3.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+sequential_merge.o: sequential_merge.c
+	$(CPP) -c sequential_merge.c -o sequential_merge.o $(CXXFLAGS)
+
+binary_search.o: binary_search.c
+	$(CPP) -c binary_search.c -o binary_search.o $(CXXFLAGS)
+
+main.o: main.c
+	$(CPP) -c main.c -o main.o $(CXXFLAGS)
+
+binary_search_classic.o: binary_search_classic.c
+	$(CPP) -c binary_search_classic.c -o binary_search_classic.o $(CXXFLAGS)
