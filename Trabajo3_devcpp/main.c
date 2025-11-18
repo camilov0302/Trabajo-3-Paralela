@@ -49,15 +49,15 @@ int main() {
            binarySearch_greater(Aprime, 3, 13));
 
     printf("\n------------------------------------------------------------\n");
-    printf(" AHORA PRUEBA DE TIEMPO REAL CON ARREGLOS GIGANTES\n");
+    printf(" AHORA PRUEBA DE TIEMPO CON ARREGLOS GIGANTES\n");
     printf("------------------------------------------------------------\n\n");
 
     // --------------------------------------------------------------
     // PRUEBA GRANDE 
     // --------------------------------------------------------------
 
-    int sizeA = 100000000;   // 5 millones
-    int sizeB = 100000000;   // 5 millones
+    int sizeA = 100000000;   // 100 millones
+    int sizeB = 100000000;   // 100 millones
 
     printf("Creando arreglos de %d y %d elementos...\n", sizeA, sizeB);
 
